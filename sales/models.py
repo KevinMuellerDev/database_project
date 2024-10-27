@@ -11,7 +11,7 @@ class Customer(models.Model):
     account = models.FloatField(blank=True, null=True)
 
     def __str__(self):
-        return f"Name:{self.first_name} {self.last_name}, Abo: {self.newsletter_abo}, email: {self.email_address}, Account: {self.account} \n"
+        return f"{self.first_name} {self.last_name}"
 
 
 class Product(models.Model):
