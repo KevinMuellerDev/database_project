@@ -4,17 +4,11 @@ from django.db import models
 
 
 class Customer(models.Model):
-    first_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, help_text="Max. length of 30 chars")
     last_name = models.CharField(max_length=30)
     newsletter_abo = models.BooleanField(default=False)
     email_address = models.CharField(max_length=30, blank=True, default="")
     account = models.FloatField(blank=True, null=True)
-    slug = models.SlugField(blank=True, default="")
-
-    class Meta:
-        verbose_name = "Customer"
-        verbose_name_plural = "Customers"
-        ordering = ["first_name"]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

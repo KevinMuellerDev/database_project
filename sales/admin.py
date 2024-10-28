@@ -8,8 +8,6 @@ model = [Product, Bill, Order, Producttype]
 
 class AdminCustomer(admin.ModelAdmin):
     list_filter = ["first_name", "last_name"]
-
-    prepopulated_fields={"slug":["first_name","last_name"]}
     fieldsets = [
         (
             None,
@@ -21,7 +19,7 @@ class AdminCustomer(admin.ModelAdmin):
             "Advanced options",
             {
                 "classes": ["collapse"],
-                "fields": ["newsletter_abo","slug"],
+                "fields": ["newsletter_abo"],
             },
         ),
     ]
